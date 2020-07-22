@@ -1,0 +1,277 @@
+package Interfaces;
+
+import clases.ConectarBD;
+import java.awt.event.KeyEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+public class InicioSecion extends javax.swing.JFrame {
+    
+    public InicioSecion() {
+        
+        initComponents();
+        
+        this.setLocationRelativeTo(null);
+        
+    }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        labUsuario = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        labContra = new javax.swing.JLabel();
+        txtContra = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(88, 0, 8));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 5, true));
+        jPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPanel1KeyTyped(evt);
+            }
+        });
+
+        labUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labUsuario.setForeground(new java.awt.Color(153, 153, 255));
+        labUsuario.setText("Usuario");
+
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
+
+        labContra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labContra.setForeground(new java.awt.Color(153, 153, 255));
+        labContra.setText("Contraseña");
+
+        txtContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContraKeyTyped(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Biblioteca");
+
+        btnIngresar.setBackground(new java.awt.Color(137, 46, 55));
+        btnIngresar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(204, 204, 204));
+        btnIngresar.setText("INGRESAR");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setForeground(new java.awt.Color(204, 0, 0));
+        btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(183, 183, 183)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labUsuario)
+                            .addComponent(labContra))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUsuario)
+                            .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(btnIngresar)))
+                .addGap(0, 202, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnSalir)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(224, 224, 224))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSalir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labUsuario)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labContra)
+                    .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(btnIngresar)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+        System.exit(0);
+    }                                        
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        
+        String usuario=txtUsuario.getText();
+        String pass =new String(txtContra.getPassword());
+        
+        if("".equals(usuario) || "".equals(pass)){
+            if("".equals(usuario)){
+                JOptionPane.showMessageDialog(null, "Usuario no rellenado");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Contraseña no rellenado");
+            }
+        }
+        else{
+            ResultSet a,b,c;
+            ConectarBD z = new ConectarBD();
+            a=z.getTabla("SELECT * FROM Usuarios WHERE Usuarios.users LIKE '"+usuario+"' AND Usuarios.pass LIKE '"+pass+"'");
+            String nom=" ";
+            String apel=" ";
+            String dato=" ";
+            String funci=" ";
+            int dni;
+            
+            try {
+                while(a.next()){
+                    funci = a.getString("Funci");
+                    b=z.getTabla("SELECT * FROM Usuarios WHERE Usuarios.Funci LIKE 'Lector' AND Usuarios.users LIKE '"+usuario+"'");
+                    try {
+                        if(b.next()){
+                            dni=a.getInt("DNILector");
+                            c=z.getTabla("SELECT * FROM tblLector WHERE tblLector.DNILector LIKE '"+dni+"'");
+                            nom=c.getString("lecNombre");
+                            apel=c.getString("lecApellidos");
+                          
+                        }else{
+                            dni=a.getInt("DNIBiblio");
+                            c=z.getTabla("SELECT * FROM tblBibliotecario WHERE tblBibliotecario.DNIBiblio LIKE '"+dni+"'");
+                            nom=c.getString("biblNombre");
+                            apel=c.getString("biblApellido");
+                            
+                        }
+                        dato=nom+" "+apel;
+                    }catch (SQLException e) {
+                    Object ex = null;
+                    Logger.getLogger(InicioSecion.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }      
+            } catch (SQLException ex) {
+                Logger.getLogger(InicioSecion.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            if(funci.equals("Lector") || funci.equals("Bibliotecario")){
+                
+                if(funci.equals("Lector")){
+                    this.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Bienvenido al sistema Lector");
+                    MenuLector menu = new MenuLector();
+
+                    menu.txtNombreUsuario.setText(dato);
+                    menu.setVisible(true);
+                }
+                else{
+                    this.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Bienvenido al sistema Bibliotecario");
+                    MenuBibliotecario menu = new MenuBibliotecario();
+
+                    menu.txtNombreUsuario.setText(dato);
+                    menu.setVisible(true);
+                }
+                
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Datos no encontrados");
+        }
+        
+    }                                           
+    
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        
+    }                                          
+
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {                                    
+        
+        char tp=evt.getKeyChar();
+        
+        if(tp==KeyEvent.VK_ENTER)
+            btnIngresar.doClick();
+        
+    }                                   
+
+    private void txtContraKeyTyped(java.awt.event.KeyEvent evt) {                                   
+        
+        char tp=evt.getKeyChar();
+        
+        if(tp==KeyEvent.VK_ENTER)
+            btnIngresar.doClick();
+        
+    }                                  
+
+    private void jPanel1KeyTyped(java.awt.event.KeyEvent evt) {                                 
+        // TODO add your handling code here:
+    }                                
+
+    // Variables declaration - do not modify                     
+    protected javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labContra;
+    private javax.swing.JLabel labUsuario;
+    private javax.swing.JPasswordField txtContra;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration                   
+
+}
+
